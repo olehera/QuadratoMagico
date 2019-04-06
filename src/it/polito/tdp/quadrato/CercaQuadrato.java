@@ -1,10 +1,21 @@
 package it.polito.tdp.quadrato;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CercaQuadrato {
 	
 	List<Quadrato> soluzioni;
+	
+	public CercaQuadrato() {
+	}
+	
+	public void genera(int size) {
+		Quadrato parziale = new Quadrato(size) ;
+		this.soluzioni= new ArrayList<Quadrato>() ;
+		this.cerca(parziale, 0);
+	}
+
 	
 	private void cerca(Quadrato parziale, int L) {
 		// le L caselle da 0 a L-1 sono piene
@@ -25,7 +36,7 @@ public class CercaQuadrato {
 			if (!parziale.contains(i)) {
 				parziale.add(i);
 			
-			    cerca(parziale, L+i);
+			    cerca(parziale, L+1);
 			
 			    parziale.remove(i); 
 			}
