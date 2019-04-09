@@ -16,6 +16,7 @@ public class CercaQuadrato {
 		this.cerca(parziale, 0);
 	}
 
+	// Complessità di questa procedur ricorsiva: O( (n2)! )
 	
 	private void cerca(Quadrato parziale, int L) {
 		// le L caselle da 0 a L-1 sono piene
